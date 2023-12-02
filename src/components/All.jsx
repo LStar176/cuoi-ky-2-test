@@ -13,7 +13,7 @@ const All = () => {
             <InputTodo />
             <FormGroup>
 
-                <ListTodo dataFilter={todos} setTodos={setTodos} />
+                <ListTodo dataFilter={todos} setTodos={setTodos} todos={todos} />
             </FormGroup>
 
         </>

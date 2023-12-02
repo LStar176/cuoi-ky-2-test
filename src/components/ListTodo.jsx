@@ -1,15 +1,14 @@
 import { Checkbox, FormControlLabel, Typography } from '@mui/material'
-import React, { useContext, useState } from 'react'
-import { Context } from './context'
 
-const ListTodo = ({ dataFilter, setTodos }) => {
+const ListTodo = ({ dataFilter, setTodos, todos }) => {
+    console.log(dataFilter, setTodos, todos)
 
     const data = [...dataFilter]
-
+    const todosNew = [...todos]
 
     const handleStatus = (e, id) => {
-        data[id - 1].status = e.target.checked ? 'completed' : 'active'
-        setTodos(data)
+        todosNew[id - 1].status = e.target.checked ? 'completed' : 'active'
+        setTodos(todosNew)
     }
 
 

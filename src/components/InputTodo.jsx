@@ -29,7 +29,6 @@ const InputTodo = () => {
             isRemove: false,
         }
         ]
-        console.log(data);
         setTodos(data)
     }
 

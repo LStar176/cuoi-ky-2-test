@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import InputTodo from './InputTodo'
 import { FormGroup } from '@mui/material'
 import ListTodo from './ListTodo'
@@ -9,14 +9,14 @@ const Active = () => {
     const dataFilter = todos.filter((todo) => {
         return todo.status === 'active'
     })
-
-
+    console.log(todos);
+    console.log(dataFilter)
     return (
         <>
             <InputTodo />
             <FormGroup>
 
-                <ListTodo dataFilter={dataFilter} setTodos={setTodos} />
+                <ListTodo dataFilter={dataFilter} setTodos={setTodos} todos={todos} />
             </FormGroup></>
     )
 }
