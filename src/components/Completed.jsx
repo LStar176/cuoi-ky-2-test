@@ -10,13 +10,15 @@ const Completed = () => {
         return todo.status === 'completed'
     })
 
+
+
     return (
         <>
             <FormGroup>
 
                 <ListTodo dataFilter={completed} setTodos={setTodos} todos={todos} />
             </FormGroup>
-            {remove && <Button onClick={setTodos([])} sx={{ color: 'white', backgroundColor: 'red' }}>Delete All</Button>}
+            {remove && <Button sx={{ color: 'white', backgroundColor: 'red' }}>Delete All</Button>}
         </>)
 
 
