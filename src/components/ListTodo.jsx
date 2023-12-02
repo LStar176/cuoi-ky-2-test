@@ -19,7 +19,7 @@ const ListTodo = ({ dataFilter, setTodos, todos }) => {
                     // FormControlLabel on Checkbox 
                     <FormControlLabel key={todo.id}
                         onChange={(e) => handleStatus(e, todo.id)}
-                        control={<Checkbox />}
+                        control={<Checkbox checked={todo.status === 'completed'} />}
                         label={<Typography
                             variant="p"
                             sx={{
