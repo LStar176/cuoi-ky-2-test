@@ -6,11 +6,11 @@ import { Context } from './context'
 
 const Active = () => {
     const { todos, setTodos } = useContext(Context)
-    console.log(todos);
     const dataFilter = todos.filter((todo) => {
         return todo.status === 'active'
     })
-    console.log(dataFilter);
+
+
     return (
         <>
             <InputTodo />
