@@ -3,11 +3,18 @@ import { Context } from './context'
 
 const Completed = () => {
     const { todos, setTodos } = useContext(Context)
-
+    const completed = todos.filter(todo => {
+        return todo.status === 'completed'
+    })
     return (
-        <div>
-
-        </div>
+        <>
+            {completed.map(todo => {
+                <div key={todo.key}>
+                    todo.task
+                </div>
+            })
+            }
+        </>
     )
 }
 

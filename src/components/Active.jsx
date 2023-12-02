@@ -9,8 +9,6 @@ const Active = () => {
     const dataFilter = todos.filter((todo) => {
         return todo.status === 'active'
     })
-    console.log(todos);
-    console.log(dataFilter)
     return (
         <>
             <InputTodo />

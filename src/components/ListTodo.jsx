@@ -1,7 +1,6 @@
 import { Checkbox, FormControlLabel, Typography } from '@mui/material'
 
 const ListTodo = ({ dataFilter, setTodos, todos }) => {
-    console.log(dataFilter, setTodos, todos)
 
     const data = [...dataFilter]
     const todosNew = [...todos]
