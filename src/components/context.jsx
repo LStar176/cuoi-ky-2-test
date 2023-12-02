@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const Context = createContext()
 
 function TabContext({ children }) {
+    const [remove, setRemove] = useState(false)
     const [todos, setTodos] = useState([
         {
             id: 1,
@@ -25,7 +26,7 @@ function TabContext({ children }) {
     ])
 
     return (
-        <Context.Provider value={{ todos, setTodos }}>
+        <Context.Provider value={{ todos, setTodos, remove, setRemove }}>
             {children}
         </Context.Provider>
     )

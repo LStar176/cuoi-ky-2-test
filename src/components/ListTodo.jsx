@@ -1,6 +1,13 @@
-import { Checkbox, FormControlLabel, Typography } from '@mui/material'
+import { Checkbox, FormControlLabel, Typography, IconButton } from '@mui/material'
+import DeleteIcon from '@mui/icons-material/Delete';
+import { Context } from './context';
+import { useContext } from 'react';
+
 
 const ListTodo = ({ dataFilter, setTodos, todos }) => {
+    const { remove, setRemove } = useContext(Context)
+    console.log(remove);
+
 
     const data = [...dataFilter]
     const todosNew = [...todos]
@@ -15,9 +22,9 @@ const ListTodo = ({ dataFilter, setTodos, todos }) => {
     return (
         <>
             {data.map((todo) => {
-                return (
-                    // FormControlLabel on Checkbox 
-                    <FormControlLabel key={todo.id}
+                return (<div key={todo.id}>
+                    {/* FormControlLabel on Checkbox  */}
+                    <FormControlLabel
                         onChange={(e) => handleStatus(e, todo.id)}
                         control={<Checkbox checked={todo.status === 'completed'} />}
                         label={<Typography
@@ -29,6 +36,9 @@ const ListTodo = ({ dataFilter, setTodos, todos }) => {
                         >
                             {todo.task}
                         </Typography>} />
+                    {remove && <IconButton><DeleteIcon /></IconButton>}
+
+                </div>
                 )
             })}
         </>

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { Context } from './context'
-import { Box, FormGroup, IconButton, Stack } from '@mui/material'
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, FormGroup, } from '@mui/material'
 import ListTodo from './ListTodo';
 
 const Completed = () => {
-    const { todos, setTodos } = useContext(Context)
+    const { todos, setTodos, remove, setRemove } = useContext(Context)
+
     const completed = todos.filter(todo => {
         return todo.status === 'completed'
     })
@@ -16,6 +16,7 @@ const Completed = () => {
 
                 <ListTodo dataFilter={completed} setTodos={setTodos} todos={todos} />
             </FormGroup>
+            {remove && <Button onClick={setTodos([])} sx={{ color: 'white', backgroundColor: 'red' }}>Delete All</Button>}
         </>)
 
 
